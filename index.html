@@ -1,0 +1,630 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>WoVR: World Models as Reliable Simulators for Post-Training VLA Policies with RL</title>
+  <meta name="title" content="WoVR: World Models as Reliable Simulators for Post-Training VLA Policies with RL">
+  <meta name="description" content="WoVR is a hallucination-aware world-model-based reinforcement learning framework for post-training VLA policies with stable long-horizon imagined rollouts.">
+  <meta name="robots" content="index, follow">
+  <meta name="language" content="English">
+  <meta name="theme-color" content="#173a8a">
+  <meta name="msapplication-TileColor" content="#173a8a">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="WoVR">
+  <meta property="og:title" content="WoVR: World Models as Reliable Simulators for Post-Training VLA Policies with RL">
+  <meta property="og:description" content="Reliable world-model-based reinforcement learning for post-training VLA policies by controlling hallucination in imagined rollouts.">
+  <meta property="og:url" content="https://wovr-corl.github.io/">
+  <meta property="og:image" content="https://wovr-corl.github.io/static/images/social_preview.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="WoVR project page preview">
+  <meta property="article:published_time" content="2026-02-15T00:00:00.000Z">
+  <meta property="article:section" content="Research">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="WoVR: World Models as Reliable Simulators for Post-Training VLA Policies with RL">
+  <meta name="twitter:description" content="Reliable world-model-based reinforcement learning for post-training VLA policies by controlling hallucination in imagined rollouts.">
+  <meta name="twitter:image" content="https://wovr-corl.github.io/static/images/social_preview.png">
+  
+  <link rel="canonical" href="https://wovr-corl.github.io/">
+  <link rel="icon" type="image/png" href="static/images/icon.png">
+  <link rel="apple-touch-icon" href="static/images/icon.png">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="static/css/bulma.min.css">
+  <link rel="stylesheet" href="static/css/fontawesome.all.min.css">
+  <link rel="stylesheet" href="static/css/index.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <button class="scroll-to-top" id="scrollToTopButton" title="Scroll to top" aria-label="Scroll to top">
+    <i class="fas fa-chevron-up"></i>
+  </button>
+
+  <main id="main-content">
+
+    <section class="hero publication-header">
+      <div class="hero-body">
+        <div class="container is-max-desktop">
+          <div class="hero-intro">
+            <div class="eyebrow">
+              <span class="eyebrow-chip">Project Page</span>
+              <span class="eyebrow-chip is-muted">Anonymous Submission</span>
+            </div>
+            <h1 class="title is-2 publication-title">
+              WoVR: World Models as Reliable Simulators for Post-Training VLA Policies with RL
+            </h1>
+          </div>
+
+          <figure class="hero-figure">
+            <img src="static/images/overview.png" alt="WoVR framework overview" loading="eager">
+          </figure>
+          <p class="figure-caption">
+            Reliability-aware optimization in imagination: a controllable simulator, hallucination-aware interaction,
+            and policy-simulator co-evolution.
+          </p>
+
+
+          <p class="hero-summary">
+            WoVR turns learned world models into reliable simulators for reinforcement learning by
+            explicitly controlling hallucination at the simulator, interaction, and alignment levels.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section hero execution-showcase" id="execution-video">
+      <div class="hero-body">
+        <div class="container is-max-desktop">
+          <div class="section-header">
+            <h2 class="title is-3">Real-World Execution Video</h2>
+            <p class="execution-platform">OpenVLA-OFT + Franka</p>
+          </div>
+
+          <div class="wide-table-wrap execution-table-wrap">
+            <div class="execution-table-layout">
+              <div class="wide-table-inner">
+                <table class="table is-bordered is-striped execution-table">
+                  <colgroup>
+                    <col style="width: 16%;">
+                    <col style="width: 28%;">
+                    <col style="width: 28%;">
+                    <col style="width: 28%;">
+                  </colgroup>
+                  <thead>
+                    <tr>
+                      <th>Task</th>
+                      <th>SFT Failure Mode 1</th>
+                      <th>SFT Failure Mode 2</th>
+                      <th>WoVR RL Success</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td class="execution-task-cell">Pick Banana</td>
+                      <td>
+                        <video controls muted loop preload="metadata" playsinline class="execution-video">
+                          <source src="static/videos/real-world-execution/franka/pick-banana_Initial_grasp_failure.mp4" type="video/mp4">
+                        </video>
+                      </td>
+                      <td>
+                        <video controls muted loop preload="metadata" playsinline class="execution-video">
+                          <source src="static/videos/real-world-execution/franka/pick-banana-failed_to_Transport.mp4" type="video/mp4">
+                        </video>
+                      </td>
+                      <td>
+                        <video controls muted loop preload="metadata" playsinline class="execution-video">
+                          <source src="static/videos/real-world-execution/franka/pick-banana_success.mp4" type="video/mp4">
+                        </video>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td class="execution-task-cell">Pick Bread</td>
+                      <td>
+                        <video controls muted loop preload="metadata" playsinline class="execution-video">
+                          <source src="static/videos/real-world-execution/franka/pick-bread_premature_release.mp4" type="video/mp4">
+                        </video>
+                      </td>
+                      <td>
+                        <video controls muted loop preload="metadata" playsinline class="execution-video">
+                          <source src="static/videos/real-world-execution/franka/pick-bread_gripper_release_failure.mp4" type="video/mp4">
+                        </video>
+                      </td>
+                      <td>
+                        <video controls muted loop preload="metadata" playsinline class="execution-video">
+                          <source src="static/videos/real-world-execution/franka/pick-bread_success.mp4" type="video/mp4">
+                        </video>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td class="execution-task-cell">Open Drawer</td>
+                      <td>
+                        <video controls muted loop preload="metadata" playsinline class="execution-video">
+                          <source src="static/videos/real-world-execution/franka/open-drawer_missed_handle.mp4" type="video/mp4">
+                        </video>
+                      </td>
+                      <td>
+                        <video controls muted loop preload="metadata" playsinline class="execution-video">
+                          <source src="static/videos/real-world-execution/franka/open-drawer_no_effective_pull.mp4" type="video/mp4">
+                        </video>
+                      </td>
+                      <td>
+                        <video controls muted loop preload="metadata" playsinline class="execution-video">
+                          <source src="static/videos/real-world-execution/franka/open-drawer_success.mp4" type="video/mp4">
+                        </video>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+          <p class="has-text-grey subtitle has-text-centered execution-caption">
+            Visualization of real-world execution before and after WoVR policy optimization.
+          </p>
+
+          <div class="execution-platform-block">
+            <p class="execution-platform">AgileX + OpenVLA-OFT</p>
+            <div class="wide-table-wrap execution-table-wrap">
+              <div class="execution-table-layout">
+                <div class="wide-table-inner">
+                  <table class="table is-bordered is-striped execution-table">
+                    <colgroup>
+                      <col style="width: 16%;">
+                      <col style="width: 28%;">
+                      <col style="width: 28%;">
+                      <col style="width: 28%;">
+                    </colgroup>
+                    <thead>
+                      <tr>
+                        <th>Task</th>
+                        <th>SFT Failure Mode 1</th>
+                        <th>SFT Failure Mode 2</th>
+                        <th>WoVR RL Success</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td class="execution-task-cell">Pick Cube</td>
+                        <td>
+                          <video controls muted loop preload="metadata" playsinline class="execution-video">
+                            <source src="static/videos/real-world-execution/piper-openvla-oft/pick-cube-gripper_release_failure.mp4" type="video/mp4">
+                          </video>
+                        </td>
+                        <td>
+                          <video controls muted loop preload="metadata" playsinline class="execution-video">
+                            <source src="static/videos/real-world-execution/piper-openvla-oft/pick-cube_Missed_the_Hole.mp4" type="video/mp4">
+                          </video>
+                        </td>
+                        <td>
+                          <video controls muted loop preload="metadata" playsinline class="execution-video">
+                            <source src="static/videos/real-world-execution/piper-openvla-oft/openvla-oft_pick-cube_success.mp4" type="video/mp4">
+                          </video>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td class="execution-task-cell">Pick Tomato</td>
+                        <td>
+                          <video controls muted loop preload="metadata" playsinline class="execution-video">
+                            <source src="static/videos/real-world-execution/piper-openvla-oft/pick-tomato-Failed_to_Close_Box.mp4" type="video/mp4">
+                          </video>
+                        </td>
+                        <td>
+                          <video controls muted loop preload="metadata" playsinline class="execution-video">
+                            <source src="static/videos/real-world-execution/piper-openvla-oft/pick-tomato-Gripper_Stuck_Inside.mp4" type="video/mp4">
+                          </video>
+                        </td>
+                        <td>
+                          <video controls muted loop preload="metadata" playsinline class="execution-video">
+                            <source src="static/videos/real-world-execution/piper-openvla-oft/openvla-oft_pick-tomato_success.mp4" type="video/mp4">
+                          </video>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td class="execution-task-cell">Fold Towel</td>
+                        <td>
+                          <video controls muted loop preload="metadata" playsinline class="execution-video">
+                            <source src="static/videos/real-world-execution/piper-openvla-oft/fold-towel_Incomplete_folding.mp4" type="video/mp4">
+                          </video>
+                        </td>
+                        <td>
+                          <video controls muted loop preload="metadata" playsinline class="execution-video">
+                            <source src="static/videos/real-world-execution/piper-openvla-oft/fold-towel_Wrinkled_folding.mp4" type="video/mp4">
+                          </video>
+                        </td>
+                        <td>
+                          <video controls muted loop preload="metadata" playsinline class="execution-video">
+                            <source src="static/videos/real-world-execution/piper-openvla-oft/openvla-oft_fold-towel_success.mp4" type="video/mp4">
+                          </video>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="execution-platform-block">
+            <p class="execution-platform">AgileX + OpenPI-0.5</p>
+            <div class="wide-table-wrap execution-table-wrap">
+              <div class="execution-table-layout">
+                <div class="wide-table-inner">
+                  <table class="table is-bordered is-striped execution-table">
+                    <colgroup>
+                      <col style="width: 16%;">
+                      <col style="width: 28%;">
+                      <col style="width: 28%;">
+                      <col style="width: 28%;">
+                    </colgroup>
+                    <thead>
+                      <tr>
+                        <th>Task</th>
+                        <th>SFT Failure Mode 1</th>
+                        <th>SFT Failure Mode 2</th>
+                        <th>WoVR RL Success</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td class="execution-task-cell">Pick Cube</td>
+                        <td>
+                          <video controls muted loop preload="metadata" playsinline class="execution-video">
+                            <source src="static/videos/real-world-execution/piper-openpi/openpi05-pick-cube_Fail_to_Grasp.mp4" type="video/mp4">
+                          </video>
+                        </td>
+                        <td>
+                          <video controls muted loop preload="metadata" playsinline class="execution-video">
+                            <source src="static/videos/real-world-execution/piper-openpi/openpi05-pick-cube_Miss_the_Hole.mp4" type="video/mp4">
+                          </video>
+                        </td>
+                        <td>
+                          <video controls muted loop preload="metadata" playsinline class="execution-video">
+                            <source src="static/videos/real-world-execution/piper-openpi/openpi05_pick-cube_success.mp4" type="video/mp4">
+                          </video>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td class="execution-task-cell">Pick Tomato</td>
+                        <td>
+                          <video controls muted loop preload="metadata" playsinline class="execution-video">
+                            <source src="static/videos/real-world-execution/piper-openpi/openpi05-pick-tomato_fail_to_close.mp4" type="video/mp4">
+                          </video>
+                        </td>
+                        <td>
+                          <video controls muted loop preload="metadata" playsinline class="execution-video">
+                            <source src="static/videos/real-world-execution/piper-openpi/openpi05-pick-tomato_Fail_to_Pick.mp4" type="video/mp4">
+                          </video>
+                        </td>
+                        <td>
+                          <video controls muted loop preload="metadata" playsinline class="execution-video">
+                            <source src="static/videos/real-world-execution/piper-openpi/openpi05_pick-tomato_success.mp4" type="video/mp4">
+                          </video>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td class="execution-task-cell">Fold Towel</td>
+                        <td>
+                          <video controls muted loop preload="metadata" playsinline class="execution-video">
+                            <source src="static/videos/real-world-execution/piper-openpi/openpi05-fold-towel_Incomplete_folding.mp4" type="video/mp4">
+                          </video>
+                        </td>
+                        <td>
+                          <video controls muted loop preload="metadata" playsinline class="execution-video">
+                            <source src="static/videos/real-world-execution/piper-openpi/openpi05-fold-towel_Wrinkled_folding.mp4" type="video/mp4">
+                          </video>
+                        </td>
+                        <td>
+                          <video controls muted loop preload="metadata" playsinline class="execution-video">
+                            <source src="static/videos/real-world-execution/piper-openpi/openpi05_fold-towel_success.mp4" type="video/mp4">
+                          </video>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section hero is-light" id="abstract">
+      <div class="hero-body">
+        <div class="container is-max-desktop">
+          <div class="section-header">
+            <p class="section-kicker">Overview</p>
+            <h2 class="title is-3">Abstract</h2>
+          </div>
+          <div class="content abstract-card">
+            <p>
+              Reinforcement learning (RL) promises to unlock capabilities beyond imitation learning for
+              Vision-Language-Action (VLA) models, but its requirement for massive real-world interaction
+              prevents direct deployment on physical robots. Recent work attempts to use learned world
+              models as simulators for policy optimization, yet closed-loop imagined rollouts inevitably
+              suffer from hallucination and long-horizon error accumulation. Such errors not only degrade
+              visual fidelity, but also mislead policy optimization by providing unreliable learning
+              signals.
+            </p>
+            <p>
+              We propose <strong>WoVR</strong>, a reliable world-model-based RL framework for post-training
+              VLA policies. Instead of assuming a faithful world model, WoVR explicitly regulates how RL
+              interacts with imperfect imagined dynamics. It improves rollout stability through a
+              controllable action-conditioned video world model, reshapes imagined interaction to reduce
+              effective error depth via Keyframe-Initialized Rollouts (KIR), and maintains policy-simulator
+              alignment through World Model-Policy co-evolution.
+            </p>
+            <p>
+              Extensive experiments demonstrate that WoVR enables stable long-horizon imagined rollouts and
+              effective policy optimization, achieving superior LIBERO performance and consistent real-world
+              gains across multiple robotic platforms. These results show that world models can serve as
+              practical simulators for RL when hallucination is explicitly controlled.
+            </p>
+          </div>
+
+          <div class="problem-card">
+            <h3 class="title is-5">The central question</h3>
+            <p>
+              If world models inevitably hallucinate under closed-loop rollouts, how can reinforcement
+              learning remain reliable instead of learning to exploit simulator errors?
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section hero" id="method">
+      <div class="hero-body">
+        <div class="container is-max-desktop">
+          <div class="section-header">
+            <p class="section-kicker">Method</p>
+            <h2 class="title is-3">A Reliability-Driven World-Model RL Pipeline</h2>
+            <p class="section-intro">
+              WoVR regulates reliability at three interconnected levels: simulator-level control,
+              interaction-level reshaping, and alignment-level co-evolution.
+            </p>
+          </div>
+
+          <figure class="figure-card full-width-card">
+            <img src="static/images/overview.png" alt="Overview of WoVR" loading="lazy">
+            <figcaption class="figure-caption">
+              <strong>Overall architecture.</strong> WoVR builds a reliability-driven reinforcement learning
+              framework entirely around the learned world model.
+            </figcaption>
+          </figure>
+
+          <div class="method-grid">
+            <article class="method-card">
+              <div class="method-copy">
+                <span class="method-index">01</span>
+                <h3 class="title is-4">Stabilized Action-Conditioned World Model</h3>
+                <p>
+                  WoVR upgrades a video diffusion backbone into an action-controllable, rollout-stable
+                  simulator with dual-channel action injection and first-frame anchoring. This reduces
+                  long-horizon drift and keeps imagined trajectories responsive to policy actions.
+                </p>
+                <ul class="method-list">
+                  <li>Dual-path action conditioning for local modulation and global control.</li>
+                  <li>First-frame anchoring to preserve scene structure across autoregressive chunks.</li>
+                  <li>Noisy context training to narrow the train-inference gap.</li>
+                </ul>
+              </div>
+              <div class="method-media">
+                <img src="static/images/world-model-arch.png" alt="World model architecture" loading="lazy">
+              </div>
+            </article>
+
+            <article class="method-card">
+              <div class="method-copy">
+                <span class="method-index">02</span>
+                <h3 class="title is-4">Hallucination-Aware Interaction with KIR</h3>
+                <p>
+                  Instead of always rolling out from the episode start, Keyframe-Initialized Rollouts (KIR)
+                  start part of the imagined trajectories near task-critical states. This shortens the
+                  effective prediction depth and keeps policy learning closer to physically meaningful
+                  transitions.
+                </p>
+                <ul class="method-list">
+                  <li>Initialize rollouts near critical contacts and failure states.</li>
+                  <li>Shorten the prefix the world model must predict before decisive moments.</li>
+                  <li>Reduce hallucination compounding and spurious long-horizon success.</li>
+                </ul>
+              </div>
+              <div class="method-media">
+                <img src="static/images/kir.png" alt="Keyframe-Initialized Rollouts illustration" loading="lazy">
+              </div>
+            </article>
+
+            <article class="method-card is-text-only">
+              <div class="method-copy">
+                <span class="method-index">03</span>
+                <h3 class="title is-4">PACE: Policy-Simulator Co-Evolution</h3>
+                <p>
+                  Policy optimization changes the action distribution, which can make a previously reliable
+                  world model drift out of regime. PACE periodically refreshes the simulator with new data
+                  gathered under the updated policy so the world model stays aligned with the behavior it is
+                  asked to simulate.
+                </p>
+                <div class="callout-list">
+                  <div class="callout-pill">Mitigates distribution shift</div>
+                  <div class="callout-pill">Preserves simulator reliability</div>
+                  <div class="callout-pill">Supports scalable on-policy optimization in imagination</div>
+                </div>
+              </div>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section hero is-light" id="results">
+      <div class="hero-body">
+        <div class="container is-max-desktop">
+          <div class="section-header">
+            <!-- <p class="section-kicker">Results</p> -->
+            <h2 class="title is-3">Results</h2>
+            <p class="section-intro">
+              The latest paper version expands evaluation to stronger initialization settings and
+              multi-platform real-world transfer while keeping the same core conclusion: reliable
+              imagination leads to better downstream RL.
+            </p>
+          </div>
+
+          <h3 class="title is-4">World Model Quality</h3>
+          <p>
+            WoVR achieves stronger long-horizon video quality than prior world-model baselines while
+            maintaining 23 FPS inference throughput.
+          </p>
+          <div class="wide-table-wrap results-table-wrap">
+            <div class="wide-table-inner">
+              <table class="table is-bordered is-striped results-table">
+                <thead>
+                  <tr>
+                    <th>Method</th>
+                    <th>Rollout</th>
+                    <th>FPS &uarr;</th>
+                    <th>LPIPS &darr;</th>
+                    <th>FID &darr;</th>
+                    <th>FVD &darr;</th>
+                    <th>FloLPIPS &darr;</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr><td>EVAC</td><td>512</td><td>1.35</td><td>0.146</td><td>46.528</td><td>345.818</td><td>0.205</td></tr>
+                  <tr><td>Cosmos-Predict2</td><td>512</td><td>3.50</td><td>0.315</td><td>165.862</td><td>275.737</td><td>0.265</td></tr>
+                  <tr><td>OpenSora</td><td>512</td><td>7.00</td><td>0.105</td><td>38.478</td><td>89.391</td><td>0.156</td></tr>
+                  <tr class="is-best"><td>WoVR (Ours)</td><td>512</td><td>23.0</td><td>0.091</td><td>34.252</td><td>68.011</td><td>0.154</td></tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <h3 class="title is-4">LIBERO Policy Performance</h3>
+          <p>
+            Under both weak and strong SFT initialization, WoVR achieves the best average success rate
+            across LIBERO Spatial, Object, Goal, and Long suites.
+          </p>
+          <div class="wide-table-wrap results-table-wrap">
+            <div class="wide-table-inner">
+              <table class="table is-bordered is-striped results-table">
+                <thead>
+                  <tr>
+                    <th>Setting</th>
+                    <th>Method</th>
+                    <th>Spatial</th>
+                    <th>Object</th>
+                    <th>Goal</th>
+                    <th>Long</th>
+                    <th>Avg</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr><td rowspan="4">One-Trajectory SFT</td><td>OpenVLA-OFT</td><td>63.6</td><td>36.4</td><td>48.2</td><td>13.8</td><td>40.5</td></tr>
+                  <tr><td>w/ GRPO</td><td>66.6</td><td>45.2</td><td>52.2</td><td>14.6</td><td>44.6</td></tr>
+                  <tr><td>w/ WMPO</td><td>67.8</td><td>65.4</td><td>56.6</td><td>13.8</td><td>50.9</td></tr>
+                  <tr class="is-best"><td>w/ WoVR</td><td>84.2</td><td>80.8</td><td>77.4</td><td>35.8</td><td>69.5</td></tr>
+                  <tr><td rowspan="4">Full-Trajectory SFT</td><td>OpenVLA-OFT</td><td>93.6</td><td>83.0</td><td>90.0</td><td>85.6</td><td>88.1</td></tr>
+                  <tr><td>w/ GRPO</td><td>94.6</td><td>86.2</td><td>92.2</td><td>85.8</td><td>89.7</td></tr>
+                  <tr><td>w/ WMPO</td><td>95.0</td><td>94.8</td><td>92.8</td><td>87.0</td><td>92.4</td></tr>
+                  <tr class="is-best"><td>w/ WoVR</td><td>98.8</td><td>98.8</td><td>94.8</td><td>91.4</td><td>96.0</td></tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <h3 class="title is-4">Real-World Transfer</h3>
+          <p>
+            WoVR improves real-world success rates on both Franka Emika Panda and AgileX Piper without
+            additional online real-world reinforcement learning.
+          </p>
+          <figure class="embedded-figure">
+            <img src="static/images/real-world-grid.jpg" alt="Real-world experiments on Franka and AgileX Piper" loading="lazy">
+            <figcaption class="figure-caption">
+              Top row: Franka Emika Panda tasks. Bottom row: AgileX Piper tasks.
+            </figcaption>
+          </figure>
+          <div class="wide-table-wrap results-table-wrap">
+            <div class="wide-table-inner">
+              <table class="table is-bordered is-striped results-table">
+                <thead>
+                  <tr>
+                    <th>Platform</th>
+                    <th>Method</th>
+                    <th>Task 1</th>
+                    <th>Task 2</th>
+                    <th>Task 3</th>
+                    <th>Avg</th>
+                    <th>Delta</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr><td>Franka</td><td>OpenVLA-OFT</td><td>36.7</td><td>70.0</td><td>46.7</td><td>51.1</td><td>-</td></tr>
+                  <tr class="is-best"><td>Franka</td><td>w/ WoVR</td><td>86.7</td><td>90.0</td><td>63.3</td><td>80.0</td><td>+28.9</td></tr>
+                  <tr><td>AgileX Piper</td><td>OpenVLA-OFT</td><td>10.0</td><td>23.3</td><td>13.3</td><td>15.5</td><td>-</td></tr>
+                  <tr class="is-best"><td>AgileX Piper</td><td>w/ WoVR</td><td>20.0</td><td>33.3</td><td>33.3</td><td>28.9</td><td>+13.4</td></tr>
+                  <tr><td>AgileX Piper (&pi;<sub>0.5</sub>)</td><td>Base</td><td>20.0</td><td>60.0</td><td>23.3</td><td>34.4</td><td>-</td></tr>
+                  <tr class="is-best"><td>AgileX Piper (&pi;<sub>0.5</sub>)</td><td>w/ WoVR</td><td>30.0</td><td>86.7</td><td>53.3</td><td>56.7</td><td>+22.3</td></tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <div class="highlights-row">
+            <div class="highlight-tile">
+              <span class="highlight-label">Simulator</span>
+              <p>WoVR is both faster and more stable than prior world-model baselines under long-horizon rollout.</p>
+            </div>
+            <div class="highlight-tile">
+              <span class="highlight-label">Policy</span>
+              <p>Reliable imagination consistently outperforms limited-budget online RL and previous world-model RL.</p>
+            </div>
+            <div class="highlight-tile">
+              <span class="highlight-label">Transfer</span>
+              <p>Performance gains carry over to different platforms and even to a different VLA backbone.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section hero" id="media">
+      <div class="hero-body">
+        <div class="container is-max-desktop">
+          <div class="section-header">
+            <!-- <p class="section-kicker">Media</p> -->
+            <h2 class="title is-3">Media: Supplementary Videos</h2>
+          </div>
+
+          <div class="media-grid supplementary-media-grid">
+            <article class="video-card">
+              <h3 class="title is-5">Project Presentation</h3>
+              <video controls preload="metadata" playsinline class="project-video">
+                <source src="static/videos/presentation.mp4" type="video/mp4">
+              </video>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container is-max-desktop">
+      <p>
+        This website is styled after the single-page academic format used by the
+        <a href="https://github.com/World4RL/World4RL.github.io" target="_blank" rel="noopener">World4RL project page</a>,
+        and adapted for WoVR with paper materials, figures, and media from the provided sources.
+      </p>
+    </div>
+  </footer>
+
+  <script defer src="static/js/index.js"></script>
+</body>
+</html>
