@@ -167,6 +167,199 @@ a:hover {
   background: rgba(23, 58, 138, 0.04);
 }
 
+.libero-performance-viz {
+  display: grid;
+  gap: 1.35rem;
+  margin: 1.5rem 0 2rem;
+}
+
+.libero-chart-section {
+  padding: 1rem;
+  border: 1px solid rgba(23, 58, 138, 0.1);
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.82);
+  box-shadow: var(--shadow-sm);
+}
+
+.libero-chart-section-header {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+}
+
+.libero-chart-title {
+  margin: 0;
+  color: var(--text-primary);
+  font-family: 'Space Grotesk', 'Inter', sans-serif;
+  font-size: 1.18rem;
+  font-weight: 700;
+  letter-spacing: 0;
+}
+
+.libero-avg-strip {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  justify-content: flex-end;
+  color: var(--text-secondary);
+  font-size: 0.82rem;
+}
+
+.libero-avg-strip span,
+.libero-avg-strip strong {
+  display: inline-flex;
+  align-items: center;
+  min-height: 2rem;
+  padding: 0.35rem 0.6rem;
+  border: 1px solid rgba(23, 58, 138, 0.1);
+  border-radius: 999px;
+  background: rgba(246, 249, 255, 0.92);
+  letter-spacing: 0;
+}
+
+.libero-avg-strip strong {
+  color: var(--text-primary);
+  font-weight: 700;
+}
+
+.libero-chart-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 0.8rem;
+}
+
+.libero-chart-card {
+  min-width: 0;
+  padding: 0.8rem;
+  border: 1px solid rgba(15, 23, 42, 0.1);
+  border-radius: 8px;
+  background: white;
+}
+
+.libero-chart-card h5 {
+  margin: 0 0 0.7rem;
+  color: var(--text-primary);
+  font-family: 'Space Grotesk', 'Inter', sans-serif;
+  font-size: 1rem;
+  font-weight: 700;
+  text-align: center;
+  letter-spacing: 0;
+}
+
+.libero-chart-body {
+  display: grid;
+  grid-template-columns: 1.75rem minmax(0, 1fr);
+  gap: 0.35rem;
+  min-height: 230px;
+}
+
+.libero-axis {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 190px;
+  padding-top: 0.1rem;
+  color: var(--text-light);
+  font-size: 0.64rem;
+  line-height: 1;
+  text-align: right;
+}
+
+.libero-plot {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 0.38rem;
+  align-items: end;
+  height: 190px;
+  padding: 0 0.12rem;
+  background:
+    linear-gradient(to bottom, rgba(100, 116, 139, 0.2) 1px, transparent 1px) 0 0 / 100% 25%,
+    linear-gradient(to top, rgba(15, 23, 42, 0.22) 1px, transparent 1px);
+}
+
+.libero-bar-group {
+  position: relative;
+  display: flex;
+  align-items: end;
+  height: 190px;
+  min-width: 0;
+}
+
+.libero-bar-group > span {
+  position: absolute;
+  top: calc(100% + 0.45rem);
+  left: 0;
+  display: block;
+  width: 100%;
+  overflow: visible;
+  color: var(--text-secondary);
+  font-size: 0.68rem;
+  font-weight: 700;
+  line-height: 1.2;
+  text-align: center;
+  white-space: nowrap;
+  letter-spacing: 0;
+}
+
+.libero-bar {
+  position: relative;
+  width: 72%;
+  max-width: 2.4rem;
+  min-height: 3px;
+  height: var(--value);
+  margin: 0 auto;
+  border-radius: 6px 6px 0 0;
+  background: #c7c9cc;
+  box-shadow: inset 0 0 0 1px rgba(15, 23, 42, 0.06);
+  cursor: default;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.libero-bar.is-ours {
+  background: var(--primary-color);
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.18), 0 8px 18px rgba(23, 58, 138, 0.18);
+}
+
+.libero-bar:hover,
+.libero-bar:focus-visible {
+  z-index: 5;
+  transform: translateY(-3px);
+  box-shadow: 0 12px 24px rgba(15, 23, 42, 0.18);
+  outline: none;
+}
+
+.libero-bar::after {
+  position: absolute;
+  left: 50%;
+  bottom: calc(100% + 0.45rem);
+  z-index: 6;
+  width: max-content;
+  max-width: 9rem;
+  padding: 0.38rem 0.5rem;
+  border-radius: 6px;
+  background: rgba(15, 23, 42, 0.94);
+  color: white;
+  content: attr(data-tooltip);
+  font-size: 0.72rem;
+  font-weight: 700;
+  line-height: 1.25;
+  text-align: center;
+  white-space: normal;
+  opacity: 0;
+  pointer-events: none;
+  transform: translate(-50%, 0.25rem);
+  transition: opacity 0.18s ease, transform 0.18s ease;
+}
+
+.libero-bar:hover::after,
+.libero-bar:focus-visible::after {
+  opacity: 1;
+  transform: translate(-50%, 0);
+}
+
 .hero-intro {
   margin-bottom: 1.6rem;
 }
@@ -726,8 +919,18 @@ a:hover {
 
   .hero-shell,
   .results-grid,
-  .media-grid {
+  .media-grid,
+  .libero-chart-grid {
     grid-template-columns: 1fr;
+  }
+
+  .libero-chart-section-header {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .libero-avg-strip {
+    justify-content: flex-start;
   }
 
   .supplementary-media-grid {
@@ -772,6 +975,18 @@ a:hover {
 
   .suite-grid {
     grid-template-columns: 1fr;
+  }
+
+  .libero-chart-section {
+    padding: 0.75rem;
+  }
+
+  .libero-chart-body {
+    grid-template-columns: 1.65rem minmax(0, 1fr);
+  }
+
+  .libero-bar-group > span {
+    font-size: 0.64rem;
   }
 
   .submetric-grid {

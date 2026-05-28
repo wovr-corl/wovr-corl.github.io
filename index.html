@@ -511,6 +511,277 @@
             Under both weak and strong SFT initialization, WoVR achieves the best average success rate
             across LIBERO Spatial, Object, Goal, and Long suites.
           </p>
+          <div class="libero-performance-viz" aria-label="LIBERO policy performance success rate charts">
+            <section class="libero-chart-section" aria-labelledby="libero-one-trajectory-title">
+              <div class="libero-chart-section-header">
+                <h4 class="libero-chart-title" id="libero-one-trajectory-title">One-Trajectory SFT</h4>
+                <div class="libero-avg-strip" aria-label="Average success rates for One-Trajectory SFT">
+                  <span>Avg Success</span>
+                  <strong>OpenVLA-OFT 40.5</strong>
+                  <strong>GRPO 44.6</strong>
+                  <strong>WMPO 50.9</strong>
+                  <strong>WoVR 69.5</strong>
+                </div>
+              </div>
+              <div class="libero-chart-grid">
+                <article class="libero-chart-card">
+                  <h5>Spatial</h5>
+                  <div class="libero-chart-body">
+                    <div class="libero-axis" aria-hidden="true">
+                      <span>100%</span>
+                      <span>75%</span>
+                      <span>50%</span>
+                      <span>25%</span>
+                      <span>0%</span>
+                    </div>
+                    <div class="libero-plot">
+                      <div class="libero-bar-group">
+                        <div class="libero-bar" style="--value: 63.6%;" title="OpenVLA-OFT: 63.6% success" data-tooltip="OpenVLA-OFT: 63.6%"></div>
+                        <span>Base</span>
+                      </div>
+                      <div class="libero-bar-group">
+                        <div class="libero-bar" style="--value: 66.6%;" title="w/ GRPO: 66.6% success" data-tooltip="GRPO: 66.6%"></div>
+                        <span>GRPO</span>
+                      </div>
+                      <div class="libero-bar-group">
+                        <div class="libero-bar" style="--value: 67.8%;" title="w/ WMPO: 67.8% success" data-tooltip="WMPO: 67.8%"></div>
+                        <span>WMPO</span>
+                      </div>
+                      <div class="libero-bar-group">
+                        <div class="libero-bar is-ours" style="--value: 84.2%;" title="w/ WoVR: 84.2% success" data-tooltip="WoVR: 84.2%"></div>
+                        <span>WoVR</span>
+                      </div>
+                    </div>
+                  </div>
+                </article>
+                <article class="libero-chart-card">
+                  <h5>Object</h5>
+                  <div class="libero-chart-body">
+                    <div class="libero-axis" aria-hidden="true">
+                      <span>100%</span>
+                      <span>75%</span>
+                      <span>50%</span>
+                      <span>25%</span>
+                      <span>0%</span>
+                    </div>
+                    <div class="libero-plot">
+                      <div class="libero-bar-group">
+                        <div class="libero-bar" style="--value: 36.4%;" title="OpenVLA-OFT: 36.4% success" data-tooltip="OpenVLA-OFT: 36.4%"></div>
+                        <span>Base</span>
+                      </div>
+                      <div class="libero-bar-group">
+                        <div class="libero-bar" style="--value: 45.2%;" title="w/ GRPO: 45.2% success" data-tooltip="GRPO: 45.2%"></div>
+                        <span>GRPO</span>
+                      </div>
+                      <div class="libero-bar-group">
+                        <div class="libero-bar" style="--value: 65.4%;" title="w/ WMPO: 65.4% success" data-tooltip="WMPO: 65.4%"></div>
+                        <span>WMPO</span>
+                      </div>
+                      <div class="libero-bar-group">
+                        <div class="libero-bar is-ours" style="--value: 80.8%;" title="w/ WoVR: 80.8% success" data-tooltip="WoVR: 80.8%"></div>
+                        <span>WoVR</span>
+                      </div>
+                    </div>
+                  </div>
+                </article>
+                <article class="libero-chart-card">
+                  <h5>Goal</h5>
+                  <div class="libero-chart-body">
+                    <div class="libero-axis" aria-hidden="true">
+                      <span>100%</span>
+                      <span>75%</span>
+                      <span>50%</span>
+                      <span>25%</span>
+                      <span>0%</span>
+                    </div>
+                    <div class="libero-plot">
+                      <div class="libero-bar-group">
+                        <div class="libero-bar" style="--value: 48.2%;" title="OpenVLA-OFT: 48.2% success" data-tooltip="OpenVLA-OFT: 48.2%"></div>
+                        <span>Base</span>
+                      </div>
+                      <div class="libero-bar-group">
+                        <div class="libero-bar" style="--value: 52.2%;" title="w/ GRPO: 52.2% success" data-tooltip="GRPO: 52.2%"></div>
+                        <span>GRPO</span>
+                      </div>
+                      <div class="libero-bar-group">
+                        <div class="libero-bar" style="--value: 56.6%;" title="w/ WMPO: 56.6% success" data-tooltip="WMPO: 56.6%"></div>
+                        <span>WMPO</span>
+                      </div>
+                      <div class="libero-bar-group">
+                        <div class="libero-bar is-ours" style="--value: 77.4%;" title="w/ WoVR: 77.4% success" data-tooltip="WoVR: 77.4%"></div>
+                        <span>WoVR</span>
+                      </div>
+                    </div>
+                  </div>
+                </article>
+                <article class="libero-chart-card">
+                  <h5>Long</h5>
+                  <div class="libero-chart-body">
+                    <div class="libero-axis" aria-hidden="true">
+                      <span>100%</span>
+                      <span>75%</span>
+                      <span>50%</span>
+                      <span>25%</span>
+                      <span>0%</span>
+                    </div>
+                    <div class="libero-plot">
+                      <div class="libero-bar-group">
+                        <div class="libero-bar" style="--value: 13.8%;" title="OpenVLA-OFT: 13.8% success" data-tooltip="OpenVLA-OFT: 13.8%"></div>
+                        <span>Base</span>
+                      </div>
+                      <div class="libero-bar-group">
+                        <div class="libero-bar" style="--value: 14.6%;" title="w/ GRPO: 14.6% success" data-tooltip="GRPO: 14.6%"></div>
+                        <span>GRPO</span>
+                      </div>
+                      <div class="libero-bar-group">
+                        <div class="libero-bar" style="--value: 13.8%;" title="w/ WMPO: 13.8% success" data-tooltip="WMPO: 13.8%"></div>
+                        <span>WMPO</span>
+                      </div>
+                      <div class="libero-bar-group">
+                        <div class="libero-bar is-ours" style="--value: 35.8%;" title="w/ WoVR: 35.8% success" data-tooltip="WoVR: 35.8%"></div>
+                        <span>WoVR</span>
+                      </div>
+                    </div>
+                  </div>
+                </article>
+              </div>
+            </section>
+
+            <section class="libero-chart-section" aria-labelledby="libero-full-trajectory-title">
+              <div class="libero-chart-section-header">
+                <h4 class="libero-chart-title" id="libero-full-trajectory-title">Full-Trajectory SFT</h4>
+                <div class="libero-avg-strip" aria-label="Average success rates for Full-Trajectory SFT">
+                  <span>Avg Success</span>
+                  <strong>OpenVLA-OFT 88.1</strong>
+                  <strong>GRPO 89.7</strong>
+                  <strong>WMPO 92.4</strong>
+                  <strong>WoVR 96.0</strong>
+                </div>
+              </div>
+              <div class="libero-chart-grid">
+                <article class="libero-chart-card">
+                  <h5>Spatial</h5>
+                  <div class="libero-chart-body">
+                    <div class="libero-axis" aria-hidden="true">
+                      <span>100%</span>
+                      <span>75%</span>
+                      <span>50%</span>
+                      <span>25%</span>
+                      <span>0%</span>
+                    </div>
+                    <div class="libero-plot">
+                      <div class="libero-bar-group">
+                        <div class="libero-bar" style="--value: 93.6%;" title="OpenVLA-OFT: 93.6% success" data-tooltip="OpenVLA-OFT: 93.6%"></div>
+                        <span>Base</span>
+                      </div>
+                      <div class="libero-bar-group">
+                        <div class="libero-bar" style="--value: 94.6%;" title="w/ GRPO: 94.6% success" data-tooltip="GRPO: 94.6%"></div>
+                        <span>GRPO</span>
+                      </div>
+                      <div class="libero-bar-group">
+                        <div class="libero-bar" style="--value: 95.0%;" title="w/ WMPO: 95.0% success" data-tooltip="WMPO: 95.0%"></div>
+                        <span>WMPO</span>
+                      </div>
+                      <div class="libero-bar-group">
+                        <div class="libero-bar is-ours" style="--value: 98.8%;" title="w/ WoVR: 98.8% success" data-tooltip="WoVR: 98.8%"></div>
+                        <span>WoVR</span>
+                      </div>
+                    </div>
+                  </div>
+                </article>
+                <article class="libero-chart-card">
+                  <h5>Object</h5>
+                  <div class="libero-chart-body">
+                    <div class="libero-axis" aria-hidden="true">
+                      <span>100%</span>
+                      <span>75%</span>
+                      <span>50%</span>
+                      <span>25%</span>
+                      <span>0%</span>
+                    </div>
+                    <div class="libero-plot">
+                      <div class="libero-bar-group">
+                        <div class="libero-bar" style="--value: 83.0%;" title="OpenVLA-OFT: 83.0% success" data-tooltip="OpenVLA-OFT: 83.0%"></div>
+                        <span>Base</span>
+                      </div>
+                      <div class="libero-bar-group">
+                        <div class="libero-bar" style="--value: 86.2%;" title="w/ GRPO: 86.2% success" data-tooltip="GRPO: 86.2%"></div>
+                        <span>GRPO</span>
+                      </div>
+                      <div class="libero-bar-group">
+                        <div class="libero-bar" style="--value: 94.8%;" title="w/ WMPO: 94.8% success" data-tooltip="WMPO: 94.8%"></div>
+                        <span>WMPO</span>
+                      </div>
+                      <div class="libero-bar-group">
+                        <div class="libero-bar is-ours" style="--value: 98.8%;" title="w/ WoVR: 98.8% success" data-tooltip="WoVR: 98.8%"></div>
+                        <span>WoVR</span>
+                      </div>
+                    </div>
+                  </div>
+                </article>
+                <article class="libero-chart-card">
+                  <h5>Goal</h5>
+                  <div class="libero-chart-body">
+                    <div class="libero-axis" aria-hidden="true">
+                      <span>100%</span>
+                      <span>75%</span>
+                      <span>50%</span>
+                      <span>25%</span>
+                      <span>0%</span>
+                    </div>
+                    <div class="libero-plot">
+                      <div class="libero-bar-group">
+                        <div class="libero-bar" style="--value: 90.0%;" title="OpenVLA-OFT: 90.0% success" data-tooltip="OpenVLA-OFT: 90.0%"></div>
+                        <span>Base</span>
+                      </div>
+                      <div class="libero-bar-group">
+                        <div class="libero-bar" style="--value: 92.2%;" title="w/ GRPO: 92.2% success" data-tooltip="GRPO: 92.2%"></div>
+                        <span>GRPO</span>
+                      </div>
+                      <div class="libero-bar-group">
+                        <div class="libero-bar" style="--value: 92.8%;" title="w/ WMPO: 92.8% success" data-tooltip="WMPO: 92.8%"></div>
+                        <span>WMPO</span>
+                      </div>
+                      <div class="libero-bar-group">
+                        <div class="libero-bar is-ours" style="--value: 94.8%;" title="w/ WoVR: 94.8% success" data-tooltip="WoVR: 94.8%"></div>
+                        <span>WoVR</span>
+                      </div>
+                    </div>
+                  </div>
+                </article>
+                <article class="libero-chart-card">
+                  <h5>Long</h5>
+                  <div class="libero-chart-body">
+                    <div class="libero-axis" aria-hidden="true">
+                      <span>100%</span>
+                      <span>75%</span>
+                      <span>50%</span>
+                      <span>25%</span>
+                      <span>0%</span>
+                    </div>
+                    <div class="libero-plot">
+                      <div class="libero-bar-group">
+                        <div class="libero-bar" style="--value: 85.6%;" title="OpenVLA-OFT: 85.6% success" data-tooltip="OpenVLA-OFT: 85.6%"></div>
+                        <span>Base</span>
+                      </div>
+                      <div class="libero-bar-group">
+                        <div class="libero-bar" style="--value: 85.8%;" title="w/ GRPO: 85.8% success" data-tooltip="GRPO: 85.8%"></div>
+                        <span>GRPO</span>
+                      </div>
+                      <div class="libero-bar-group">
+                        <div class="libero-bar" style="--value: 87.0%;" title="w/ WMPO: 87.0% success" data-tooltip="WMPO: 87.0%"></div>
+                        <span>WMPO</span>
+                      </div>
+                      <div class="libero-bar-group">
+                        <div class="libero-bar is-ours" style="--value: 91.4%;" title="w/ WoVR: 91.4% success" data-tooltip="WoVR: 91.4%"></div>
+                        <span>WoVR</span>
+                      </div>
+                    </div>
+                  </div>
+                </article>
+              </div>
+            </section>
+          </div>
           <div class="wide-table-wrap results-table-wrap">
             <div class="wide-table-inner">
               <table class="table is-bordered is-striped results-table">
